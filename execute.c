@@ -16,6 +16,7 @@
 int execute_shellcmd(SHELLCMD *t)
 {
     int  exitstatus;
+    int found;
 
     if (t == NULL) {			// hmmmm, that's a problem
 	exitstatus	= EXIT_FAILURE;
@@ -23,9 +24,19 @@ int execute_shellcmd(SHELLCMD *t)
     else {				// normal, exit commands
         switch (t->type) {
         case CMD_COMMAND :
-
-            searchPath(t->argv);
-            break;
+            found = search_internal(t->argv);
+            //check to see if function was an internal function
+            if(found != 0) {
+                found = search_external(t->argv);
+                // Check to see if it was an external function
+                if(found != 0) {
+                    // shell script
+                }
+                break;
+            }
+            else {
+                break;
+            }
 
         /*case CMD_SEMICOLON :
         print_shellcmd0(t->left); printf("; "); print_shellcmd0(t->right);

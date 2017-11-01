@@ -105,6 +105,11 @@ extern	void print_shellcmd0(SHELLCMD *t);
 
 // ADDITIONAL GLOBAL FUNCTIONS
 extern int exec_process(char *, char *[]);
-extern void searchPath(char *[]);
+extern int search_external(char *[]);
+extern int search_internal(char *[]);
 extern void functionError(char *);
+
+
+// ADDITIONAL GLOBAL VARIABLES
+extern char *internal_func[];
 

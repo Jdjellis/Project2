@@ -13,8 +13,12 @@ char	*HOME, *PATH, *CDPATH;
 char	*argv0		= NULL;		// the program's name
 bool	interactive	= false;
 
+// DECLARING INTERNAL FUNCTIONS
+char *internal_func[] = {"exit", "cd", "time", NULL};
+
 // ------------------------------------------------------------------------
 
+// Called when argument not found as a external program, internal program, or shell script
 void functionError(char *func)
 {
 	fprintf(stderr, "Error: Function '%s' doesn't exist\n", func);

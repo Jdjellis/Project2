@@ -1,6 +1,6 @@
 #include "myshell.h"
 
-void searchPath(char *argv[]) 
+int search_external(char *argv[]) 
 {
 	char *plist = strdup(PATH);
 	char *pch;
@@ -10,11 +10,13 @@ void searchPath(char *argv[])
 	int arglen = strlen(arg0);
 	int pathlen;
 	int result;
+	int ex; // returned variable
 
     // Check if arg0 contains a slash character. Otherwise, search in PATH variable
     if (strchr(arg0, '/') !=NULL)
     {
         exec_process(arg0, argv);
+        ex = EXIT_SUCCESS;
     }
 	else 
 	{
@@ -33,6 +35,11 @@ void searchPath(char *argv[])
 		}
 		if (result != 0) {
 			functionError(arg0);
+			ex = EXIT_FAILURE;
+		}
+		else {
+			ex = EXIT_SUCCESS;
 		}
 	}
+	return ex;
 }
