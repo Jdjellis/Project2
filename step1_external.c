@@ -1,6 +1,6 @@
 #include "myshell.h"
 
-int exec_process(char *arg0, char *argv[])
+int exec_external(char *cmd, char *argv[])
 {
     int status;
     pid_t pid = fork();
@@ -12,7 +12,7 @@ int exec_process(char *arg0, char *argv[])
     }
     else if (pid == 0) // Child process
     {
-        execv(arg0, argv);  
+        execv(cmd, argv);  
         exit(EXIT_FAILURE);
     }
     else {

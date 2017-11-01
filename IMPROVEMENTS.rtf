@@ -4,6 +4,22 @@
 \paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\fs24 \cf0 Improvements:\
+\f0\b\fs24 \cf0 Improvements:
+\b0 \
 strcat/strdup - use malloc to define size rather than strcat each time\
-}
+\
+Internal commands:\
+	Don\'92t use global array of cmds\
+	Don\'92t check array before calling exec_internal\
+\
+Error reporting\
+	Use perror/fprintf/stderror\
+	Customise error reporting (i.e. calling exit cat)\
+\
+exit()\
+	Check if argv[1] is all digits\
+	Report error if not (see error reporting)\
+\
+fail vs. not found\
+	These are different things!!!\
+	When calling time blah, it thinks it hasn\'92t been found because blah failed}

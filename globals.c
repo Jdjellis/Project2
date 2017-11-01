@@ -13,11 +13,32 @@ char	*HOME, *PATH, *CDPATH;
 char	*argv0		= NULL;		// the program's name
 bool	interactive	= false;
 
+// ADDITIONAL GLOBAL VARIABLES
+char *internal_func[] = {"exit", "cd", "time", NULL};
+int exitstatus;
+
 // ------------------------------------------------------------------------
 
-void functionError(char *func)
+// Called when argument not found as a external program, internal program, or shell script
+
+char *path_append(char *pch, char *arg, int arglen)
 {
-	fprintf(stderr, "Error: Function '%s' doesn't exist\n", func);
+	int pathlen = strlen(pch);
+	int cmdlen = pathlen + arglen + 2; // extra room for '/' and '/n'
+	char *cmd = malloc(cmdlen * sizeof(char)); // an array large enough for the path + program name
+
+	if (cmd != NULL)
+	{
+		// Build the command
+		sprintf(cmd, "%s/%s", pch, arg);
+	}
+
+	return cmd;
+}
+
+void function_error(char *func)
+{
+	fprintf(stderr, "-%s: %s: command not found\n", argv0, func);
 }
 
 void check_allocation0(void *p, char *file, const char *func, int line)

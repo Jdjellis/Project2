@@ -6,6 +6,7 @@
 #include <assert.h>
 #include <sys/wait.h>
 #include <sys/types.h>
+#include <sys/time.h>
 
 //  Written by Chris.McDonald@uwa.edu.au, October 2017
 
@@ -104,7 +105,15 @@ extern	void print_shellcmd0(SHELLCMD *t);
 //  ----------------------------------------------------------------------
 
 // ADDITIONAL GLOBAL FUNCTIONS
-extern int exec_process(char *, char *[]);
-extern void searchPath(char *[]);
-extern void functionError(char *);
+extern int exec_external(char *, char *[]);
+extern int search_external(char *[]);
+extern int search_internal(int, char *[]);
+extern void function_error(char *);
+extern char *path_append(char *, char *, int);
+extern int execute_args(int, char *[]);
+
+
+// ADDITIONAL GLOBAL VARIABLES
+extern char *internal_func[];
+extern int exitstatus;
 

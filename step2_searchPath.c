@@ -1,38 +1,39 @@
 #include "myshell.h"
 
-void searchPath(char *argv[]) 
+int search_external(char *argv[]) 
 {
 	char *plist = strdup(PATH);
 	char *pch;
+	char *cmd;
 
-	char* arg0 = argv[0];
-
-	int arglen = strlen(arg0);
-	int pathlen;
+	int arglen = strlen(argv[0]);
 	int result;
+	int ex; // returned variable
 
-    // Check if arg0 contains a slash character. Otherwise, search in PATH variable
-    if (strchr(arg0, '/') !=NULL)
+    // Check if argv[0] contains a slash character. Otherwise, search in PATH variable
+    if (strchr(argv[0], '/') !=NULL)
     {
-        exec_process(arg0, argv);
+        exec_external(argv[0], argv);
+        ex = EXIT_SUCCESS;
     }
 	else 
 	{
 		pch = strtok(plist,":");
 		while (pch != NULL && result != 0)
 		{
-			pathlen = strlen(pch) + arglen + 2;
-			char cmd[pathlen];
-			strncpy(cmd, pch, pathlen);
-			strcat(cmd, "/");
-			strncat(cmd, arg0, arglen);
+			cmd = path_append(pch, argv[0], arglen);
 
-			result = exec_process(cmd, argv);
+			result = exec_external(cmd, argv);
 
+			free(cmd);
 			pch = strtok(NULL, ":");
 		}
 		if (result != 0) {
-			functionError(arg0);
+			ex = EXIT_FAILURE;
+		}
+		else {
+			ex = EXIT_SUCCESS;
 		}
 	}
+	return ex;
 }
