@@ -15,27 +15,28 @@
 
 int execute_args(int argcount, char *argv[]) 
 {
-    int found;
+    int ex;
     //printf("argcount: %i, argv: %s\n", argcount, argv[0]);
     //printf("searching for internal: %s\n", argv[0]);
-    found = search_internal(argcount, argv);
+    ex = search_internal(argcount, argv);
     // check to see if function was an internal function
-    if(found != 0) 
+    if(ex == NOT_FOUND) 
     {
         //printf("searching for external: %s\n", argv[0]);
-        found = search_external(argv);
+        ex = search_external(argv);
         // Check to see if it was an external function
-        if(found != 0) 
+        if(ex == NOT_FOUND) 
         {
-            //printf("searching for script\n");
+            printf("searching for script\n");
             // shell script
         }
     }
-    if (found != 0)
+    if (ex != EXIT_SUCCESS)
     {
-        function_error(argv[0]);
+        function_error(argv[0], ex);
+        ex = EXIT_FAILURE;
     }
-    return found;
+    return ex;
 }
 
 int execute_shellcmd(SHELLCMD *t)

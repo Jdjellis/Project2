@@ -36,9 +36,21 @@ char *path_append(char *pch, char *arg, int arglen)
 	return cmd;
 }
 
-void function_error(char *func)
+void function_error(char *func, int type)
 {
-	fprintf(stderr, "-%s: %s: command not found\n", argv0, func);
+	if (type == NOT_FOUND)
+	{
+		fprintf(stderr, "-%s: %s: command not found\n", argv0, func);	
+	}
+	else if (type == -1)
+	{
+		perror(NULL);
+	}
+	else
+	{
+		fprintf(stderr, "-%s: %s: command failed\n", argv0, func);
+	}
+	
 }
 
 void check_allocation0(void *p, char *file, const char *func, int line)

@@ -23,6 +23,7 @@
 
 #define COMMENT_CHAR		'#'	// comment character
 #define HOME_CHAR		'~'	// home directory character
+#define NOT_FOUND   -1  // error value when cmd/directory not found
 
 //  ----------------------------------------------------------------------
 
@@ -108,7 +109,7 @@ extern	void print_shellcmd0(SHELLCMD *t);
 extern int exec_external(char *, char *[]);
 extern int search_external(char *[]);
 extern int search_internal(int, char *[]);
-extern void function_error(char *);
+extern void function_error(char *, int);
 extern char *path_append(char *, char *, int);
 extern int execute_args(int, char *[]);
 

@@ -2,22 +2,31 @@
 
 int exec_external(char *cmd, char *argv[])
 {
+    int ex;
     int status;
     pid_t pid = fork();
 
     /* Spawn a child to run the program. */
     if (pid == -1) {
-        perror("fork()");
+        function_error(argv[0], -1);
         exit(EXIT_FAILURE);
     }
     else if (pid == 0) // Child process
     {
-        execv(cmd, argv);  
+        execv(cmd, argv);
         exit(EXIT_FAILURE);
     }
     else {
         wait(&status); // wait for child to exit
-        return status;
+        if (status == 0)
+        {
+            ex = EXIT_SUCCESS;
+        }
+        else
+        {
+            ex = EXIT_FAILURE;
+        }
+        return ex;
     }
 }
 

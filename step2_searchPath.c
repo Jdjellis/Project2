@@ -13,8 +13,7 @@ int search_external(char *argv[])
     // Check if argv[0] contains a slash character. Otherwise, search in PATH variable
     if (strchr(argv[0], '/') !=NULL)
     {
-        exec_external(argv[0], argv);
-        ex = EXIT_SUCCESS;
+        ex = exec_external(argv[0], argv);
     }
 	else 
 	{
