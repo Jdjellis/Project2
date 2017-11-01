@@ -13,60 +13,74 @@
 //  THAT IT HOLDS, RETURNING THE APPROPRIATE EXIT-STATUS.
 //  READ print_shellcmd0() IN globals.c TO SEE HOW TO TRAVERSE THE COMMAND-TREE
 
+int execute_args(int argcount, char *argv[]) 
+{
+    int found;
+    //printf("argcount: %i, argv: %s\n", argcount, argv[0]);
+    //printf("searching for internal: %s\n", argv[0]);
+    found = search_internal(argcount, argv);
+    // check to see if function was an internal function
+    if(found != 0) 
+    {
+        //printf("searching for external: %s\n", argv[0]);
+        found = search_external(argv);
+        // Check to see if it was an external function
+        if(found != 0) 
+        {
+            //printf("searching for script\n");
+            // shell script
+        }
+    }
+    if (found != 0)
+    {
+        function_error(argv[0]);
+    }
+    return found;
+}
+
 int execute_shellcmd(SHELLCMD *t)
 {
     int  exitstatus;
-    int found;
 
     if (t == NULL) {			// hmmmm, that's a problem
-	exitstatus	= EXIT_FAILURE;
+	   exitstatus	= EXIT_FAILURE;
     }
     else {				// normal, exit commands
-        switch (t->type) {
+        switch (t->type) 
+        {
         case CMD_COMMAND :
-            found = search_internal(t->argv);
-            //check to see if function was an internal function
-            if(found != 0) {
-                found = search_external(t->argv);
-                // Check to see if it was an external function
-                if(found != 0) {
-                    // shell script
-                }
-                break;
-            }
-            else {
-                break;
-            }
+            exitstatus = execute_args(t->argc, t->argv);
+            break;
 
         /*case CMD_SEMICOLON :
-        print_shellcmd0(t->left); printf("; "); print_shellcmd0(t->right);
-        break;
+            print_shellcmd0(t->left); printf("; "); print_shellcmd0(t->right);
+            break;
 
         case CMD_AND :
-        print_shellcmd0(t->left); printf("&& "); print_shellcmd0(t->right);
-        break;
+            print_shellcmd0(t->left); printf("&& "); print_shellcmd0(t->right);
+            break;
 
         case CMD_OR :
-        print_shellcmd0(t->left); printf("|| "); print_shellcmd0(t->right);
-        break;
+            print_shellcmd0(t->left); printf("|| "); print_shellcmd0(t->right);
+            break;
 
         case CMD_SUBSHELL :
-        printf("( "); print_shellcmd0(t->left); printf(") ");
-        print_redirection(t);
-        break;
+            printf("( "); print_shellcmd0(t->left); printf(") ");
+            print_redirection(t);
+            break;
 
         case CMD_PIPE :
-        print_shellcmd0(t->left); printf("| "); print_shellcmd0(t->right);
-        break;
+            print_shellcmd0(t->left); printf("| "); print_shellcmd0(t->right);
+            break;
 
         case CMD_BACKGROUND :
-        print_shellcmd0(t->left); printf("& "); print_shellcmd0(t->right);
-        break;*/
+            print_shellcmd0(t->left); printf("& "); print_shellcmd0(t->right);
+            break;*/
 
         default :
-        fprintf(stderr, "%s: invalid CMDTYPE in print_shellcmd0()\n", argv0);
-        exit(EXIT_FAILURE);
-        break;
+            fprintf(stderr, "%s: invalid CMDTYPE in print_shellcmd0()\n", argv0);
+            exit(EXIT_FAILURE);
+            break;
         }
         
         exitstatus	= EXIT_SUCCESS;

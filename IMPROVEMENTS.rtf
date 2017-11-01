@@ -7,5 +7,19 @@
 \f0\b\fs24 \cf0 Improvements:
 \b0 \
 strcat/strdup - use malloc to define size rather than strcat each time\
-Catch argument errors differently to \'93function not found\'94\
-}
+\
+Internal commands:\
+	Don\'92t use global array of cmds\
+	Don\'92t check array before calling exec_internal\
+\
+Error reporting\
+	Use perror/fprintf/stderror\
+	Customise error reporting (i.e. calling exit cat)\
+\
+exit()\
+	Check if argv[1] is all digits\
+	Report error if not (see error reporting)\
+\
+fail vs. not found\
+	These are different things!!!\
+	When calling time blah, it thinks it hasn\'92t been found because blah failed}
