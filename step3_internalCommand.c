@@ -19,7 +19,7 @@ int run_cd(int argcount, char *argv[])
 {
 	int ex;
 	int arglen;
-	int result = 0;
+	int result = EXIT_FAILURE;
 
 	char *plist = strdup(CDPATH);
 	char *pch;
@@ -44,7 +44,6 @@ int run_cd(int argcount, char *argv[])
 			while (pch != NULL && result != 0)
 			{
 				cmd = path_append(pch, argv[1], arglen);
-				printf("%s\n", cmd);
 
 				result = chdir(cmd);
 
@@ -57,7 +56,6 @@ int run_cd(int argcount, char *argv[])
 
 	if (result != 0) {
 		ex = EXIT_FAILURE;
-		function_error(argv[0], result);
 	}
 	else {
 		ex = EXIT_SUCCESS;

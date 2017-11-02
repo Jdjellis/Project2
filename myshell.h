@@ -7,6 +7,7 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 #include <sys/time.h>
+#include <fcntl.h>
 
 //  Written by Chris.McDonald@uwa.edu.au, October 2017
 
@@ -112,7 +113,9 @@ extern int search_internal(int, char *[]);
 extern void function_error(char *, int);
 extern char *path_append(char *, char *, int);
 extern int execute_args(int, char *[]);
-extern int subshell(SHELLCMD *t);
+extern int exec_fork(SHELLCMD *);
+extern void file_redirection(SHELLCMD *);
+extern int exec_pipe(SHELLCMD *);
 
 
 // ADDITIONAL GLOBAL VARIABLES

@@ -1,0 +1,525 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"EXIT",
+				"EXIT_FAILURE"
+			],
+			[
+				"exit",
+				"exitstatus"
+			],
+			[
+				"execute",
+				"execute_shellcmd"
+			],
+			[
+				"function",
+				"function_error"
+			],
+			[
+				"arg",
+				"argcount"
+			],
+			[
+				"exi",
+				"EXIT_FAILURE"
+			],
+			[
+				"if",
+				"if\tIf Condition"
+			],
+			[
+				"ar",
+				"argcount"
+			],
+			[
+				"run",
+				"run_exit"
+			],
+			[
+				"ex",
+				"EXIT_FAILURE"
+			],
+			[
+				"argc",
+				"argcount"
+			],
+			[
+				"shell",
+				"SHELLCMD"
+			],
+			[
+				"str",
+				"strlen"
+			],
+			[
+				"fVend",
+				"fVendorsLen"
+			],
+			[
+				"strn",
+				"strncpy"
+			],
+			[
+				"fV",
+				"fVendorsLen"
+			],
+			[
+				"fVen",
+				"fVendorsLen"
+			],
+			[
+				"fpack",
+				"fPacketsLen"
+			],
+			[
+				"strnc",
+				"strncmp"
+			],
+			[
+				"oui",
+				"OUIlen"
+			],
+			[
+				"check",
+				"checkFilename"
+			],
+			[
+				"colA",
+				"colAlpha"
+			],
+			[
+				"sort",
+				"sortResults"
+			],
+			[
+				"tmp",
+				"tmpFile"
+			],
+			[
+				"EX",
+				"EXIT_SUCCESS"
+			],
+			[
+				"vend",
+				"vendorUnknown"
+			],
+			[
+				"ven",
+				"vendors"
+			],
+			[
+				"VENR",
+				"vendor"
+			],
+			[
+				"MAX",
+				"MAXMAC"
+			],
+			[
+				"OUI",
+				"OUIlen"
+			],
+			[
+				"MAC",
+				"MACsize"
+			],
+			[
+				"byte",
+				"byteSum"
+			],
+			[
+				"num",
+				"numDevices"
+			],
+			[
+				"byt",
+				"byteSum"
+			],
+			[
+				"sum",
+				"sumBytes"
+			],
+			[
+				"r",
+				"r"
+			],
+			[
+				"id",
+				"id"
+			],
+			[
+				"bu",
+				"BUFSIZ"
+			],
+			[
+				"UNIQ",
+				"uniqueMAC"
+			],
+			[
+				"UNI",
+				"uniqueMAC"
+			],
+			[
+				"unique",
+				"unique_id"
+			],
+			[
+				"uni",
+				"unique_id"
+			],
+			[
+				"file",
+				"fileLen"
+			],
+			[
+				"f",
+				"fprintf\tfprintf …"
+			],
+			[
+				"card",
+				"CARDSIZE"
+			],
+			[
+				"C",
+				"CARDSIZE"
+			],
+			[
+				"dec",
+				"DECKSIZ-1"
+			],
+			[
+				"deck",
+				"deck"
+			],
+			[
+				"NUM",
+				"NUMSUITS"
+			],
+			[
+				"dig",
+				"numDigits"
+			],
+			[
+				"is",
+				"isSafe"
+			],
+			[
+				"i",
+				"i"
+			],
+			[
+				"in",
+				"include"
+			],
+			[
+				"size",
+				"size"
+			],
+			[
+				"Byt",
+				"byteType"
+			],
+			[
+				"c",
+				"char"
+			],
+			[
+				"print",
+				"printf\tprintf …"
+			],
+			[
+				"a",
+				"a"
+			],
+			[
+				"argS",
+				"argString"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 87.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"pack in",
+				"Package Control: Install Package"
+			],
+			[
+				"package control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Install Package Control"
+			],
+			[
+				"sspy",
+				"Set Syntax: Python"
+			],
+			[
+				"ssj",
+				"Set Syntax: Java"
+			],
+			[
+				"build",
+				"Build With: Python"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Project2/master/step1_external.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Project2/master/step2_searchPath.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Project2/master/step3_internalCommand.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Project2/master/step5_subshell.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Project2/master/step6_fileReduction.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Project2/master/globals.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Project2/master/execute.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Project2/master/myshell.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Project2/master/myshell.h",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Project2/master/step6_fileReduction.o",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Project2/myshell.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Project2/globals.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Project2/execute.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Project2/myshell.h",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Project2/step1_external.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Project2/step2_searchPath.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Project2/makefile",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Project2/parser.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Project2/myshell/myshell.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Project2/myshell/parser.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Project2/myshell/myshell.h",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Project2/myshell/globals.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Project2/myshell/execute.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Project2/myshell/makefile",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/test.c",
+		"/usr/include/sys/syscall.h",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Project1/wifistats.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Project1/wifistats-final.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Project1/wifistats-txt.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Project1/test.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Project1/wifistats",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Lab04/q2v2.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Project1/wifistatsv1.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Lab04/q1.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Lab04/q2.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Lab03/q6.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Lab04/square.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/square",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Lab03/q1.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Lab03/q2.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Lab03/q3.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Lab03/q4.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Lab03/q5.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Lab03/q7.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/q1.c",
+		"/Users/Josh/Desktop/test.c",
+		"/Users/Josh/Desktop/test",
+		"/usr/include/errno.h",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Lab02/q9.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Lab02/q8.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Lab02/q7.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Lab02/q6.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Lab02/q3.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Lab02/square.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Lab02/q5.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Workshops/workshop3.php",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Lab01/rotq9.c",
+		"/Users/Josh/Documents/__Study/Uni/__CITS2002/Workshops/Workshop01",
+		"/Users/Josh/Downloads/uwacrest-white.svg",
+		"/Users/Josh/Coding projects/cricket-stats/get-data.py",
+		"/Users/Josh/Coding projects/cricket-stats/get-games.py",
+		"/Users/Josh/Coding projects/cricket-stats/games-data.json",
+		"/Users/Josh/Coding projects/cricket-stats/games.json",
+		"/Users/Josh/Coding projects/cricket-stats/info.json",
+		"/Users/Josh/Documents/Uni/Coding/Fizzbuzz.py",
+		"/Users/Josh/Documents/Uni/Coding/fizzbuzz_numpy.py",
+		"/Users/Josh/Documents/Uni/Coding/Fizzbuzz",
+		"/Users/Josh/Documents/Uni/Coding/Data science practice/Deep Learning/Numpy Stack/dot_for.py",
+		"/Users/Josh/Build-A-One-Page-Website1/README.md",
+		"/Users/Josh/Documents/Uni/Coding/Git/Introduction-to-git-and-github-/README.md",
+		"/Users/Josh/Documents/Uni/Coding/Web workshop/index.html",
+		"/Users/Josh/Documents/Uni/Coding/Web workshop/demo.html",
+		"/Users/Josh/Documents/Uni/Coding/Web workshop/demo.css",
+		"/Users/Josh/style.css",
+		"/Users/Josh/AndroidStudioProjects/Doggo/app/src/main/assets/Bella/css/style.css",
+		"/Users/Josh/AndroidStudioProjects/Doggo/app/src/main/assets/Charles/css/style.css",
+		"/Users/Josh/AndroidStudioProjects/Doggo/app/src/main/assets/Alex/style.css",
+		"/Users/Josh/AndroidStudioProjects/Doggo/app/src/main/assets/Bella/index.html",
+		"/Users/Josh/AndroidStudioProjects/Doggo/app/src/main/assets/Husky/css/normalize.min.css",
+		"/Users/Josh/AndroidStudioProjects/Doggo/app/src/main/assets/Husky/index.html",
+		"/Users/Josh/AndroidStudioProjects/Doggo/app/src/main/assets/Husky/css/style.css",
+		"/Users/Josh/Downloads/smore-inc-clippy.js-8bfd1f9/build/Test.html",
+		"/Users/Josh/Desktop/Test.html",
+		"/Users/Josh/Downloads/smore-inc-clippy.js-8bfd1f9/src/agent.js",
+		"/Users/Josh/Downloads/smore-inc-clippy.js-8bfd1f9/src/clippy.css",
+		"/Users/Josh/Downloads/smore-inc-clippy.js-8bfd1f9/build/clippy.css",
+		"/Users/Josh/Downloads/smore-inc-clippy.js-8bfd1f9/README.md",
+		"/Users/Josh/Documents/Uni/ICPC/codejam/qualification/Q1.py",
+		"/Users/Josh/Downloads/Anaconda3-4.3.1-MacOSX-x86_64.sh"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 21.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "step2_searchPath.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"rot",
+				"~/Documents/__Study/Uni/__CITS2002/Lab01/rotq9.c"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": false,
+	"side_bar_visible": true,
+	"side_bar_width": 120.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

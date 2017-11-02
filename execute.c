@@ -50,8 +50,14 @@ int execute_shellcmd(SHELLCMD *t)
         switch (t->type) 
         {
         case CMD_COMMAND :
-            exitstatus = execute_args(t->argc, t->argv);
-            //print_redirection(t);
+            if (t->infile == NULL && t->outfile == NULL)
+            {
+                exitstatus = execute_args(t->argc, t->argv);
+            }
+            else
+            {
+                exitstatus = exec_fork(t);
+            }
             break;
 
         case CMD_SEMICOLON :
@@ -76,20 +82,19 @@ int execute_shellcmd(SHELLCMD *t)
             break;
 
         case CMD_SUBSHELL :
-            exitstatus = subshell(t->left);
-            // print_redirection(t);
+            exitstatus = exec_fork(t);
             break;
 
-        /*case CMD_PIPE :
-            print_shellcmd0(t->left); printf("| "); print_shellcmd0(t->right);
+        case CMD_PIPE :
+            exitstatus = exec_pipe(t);
             break;
 
-        case CMD_BACKGROUND :
+        /*case CMD_BACKGROUND :
             print_shellcmd0(t->left); printf("& "); print_shellcmd0(t->right);
             break;*/
 
         default :
-            fprintf(stderr, "%s: invalid CMDTYPE in print_shellcmd0()\n", argv0);
+            fprintf(stderr, "%s: invalid CMDTYPE in execute_shellcmd()\n", argv0);
             exit(EXIT_FAILURE);
             break;
         }
