@@ -51,26 +51,36 @@ int execute_shellcmd(SHELLCMD *t)
         {
         case CMD_COMMAND :
             exitstatus = execute_args(t->argc, t->argv);
+            //print_redirection(t);
             break;
 
-        /*case CMD_SEMICOLON :
-            print_shellcmd0(t->left); printf("; "); print_shellcmd0(t->right);
+        case CMD_SEMICOLON :
+            execute_shellcmd(t->left); 
+            exitstatus = execute_shellcmd(t->right);
             break;
 
         case CMD_AND :
-            print_shellcmd0(t->left); printf("&& "); print_shellcmd0(t->right);
+            exitstatus = execute_shellcmd(t->left);
+            if (exitstatus == EXIT_SUCCESS)
+            {
+                exitstatus = execute_shellcmd(t->right);
+            }
             break;
 
         case CMD_OR :
-            print_shellcmd0(t->left); printf("|| "); print_shellcmd0(t->right);
+            exitstatus = execute_shellcmd(t->left);
+            if (exitstatus == EXIT_FAILURE)
+            {
+                exitstatus = execute_shellcmd(t->right);
+            }
             break;
 
         case CMD_SUBSHELL :
-            printf("( "); print_shellcmd0(t->left); printf(") ");
-            print_redirection(t);
+            exitstatus = subshell(t->left);
+            // print_redirection(t);
             break;
 
-        case CMD_PIPE :
+        /*case CMD_PIPE :
             print_shellcmd0(t->left); printf("| "); print_shellcmd0(t->right);
             break;
 
@@ -83,9 +93,6 @@ int execute_shellcmd(SHELLCMD *t)
             exit(EXIT_FAILURE);
             break;
         }
-        
-        exitstatus	= EXIT_SUCCESS;
     }
-
     return exitstatus;
 }

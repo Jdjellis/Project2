@@ -7,8 +7,9 @@ int exec_external(char *cmd, char *argv[])
     pid_t pid = fork();
 
     /* Spawn a child to run the program. */
-    if (pid == -1) {
-        function_error(argv[0], -1);
+    if (pid == -1) 
+    {
+        function_error(argv[0], pid);
         exit(EXIT_FAILURE);
     }
     else if (pid == 0) // Child process
@@ -16,7 +17,8 @@ int exec_external(char *cmd, char *argv[])
         execv(cmd, argv);
         exit(EXIT_FAILURE);
     }
-    else {
+    else 
+    {
         wait(&status); // wait for child to exit
         if (status == 0)
         {

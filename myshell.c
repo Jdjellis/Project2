@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     argv0	= (argv0 = strrchr(argv[0],'/')) ? argv0+1 : argv[0];
     argc--;				// skip 1st command-line argument
     argv++;
-    
+
 //  INITIALIZE THE THREE INTERNAL VARIABLES
     HOME	= getenv("HOME");
     if(HOME == NULL) {

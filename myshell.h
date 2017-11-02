@@ -112,6 +112,7 @@ extern int search_internal(int, char *[]);
 extern void function_error(char *, int);
 extern char *path_append(char *, char *, int);
 extern int execute_args(int, char *[]);
+extern int subshell(SHELLCMD *t);
 
 
 // ADDITIONAL GLOBAL VARIABLES

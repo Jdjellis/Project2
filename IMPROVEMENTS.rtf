@@ -12,6 +12,10 @@ Internal commands:\
 	Don\'92t use global array of cmds\
 	Don\'92t check array before calling exec_internal\
 \
+Sequential\
+	Shift commands into a seperate step\
+	Do a null check for each execute_shellcmd(t) call\
+\
 Error reporting\
 	Use perror/fprintf/stderror\
 	Customise error reporting (i.e. calling exit cat)\
@@ -23,10 +27,10 @@ exit()\
 External commands\
 	Can\'92t tell difference between fail or found\
 \
-time\
-	if \'93time lsd\'94 is argv, it says lsd failed, and time failed.\
-	change this to \'93time\'94 working\
-\
 search_internal()\
 	change strcmp to strncmp\
+\
+background execution\
+	print process id of child\
+	kill processes when shell is finishing (<process id> done!\
 	}
