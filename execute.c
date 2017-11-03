@@ -16,20 +16,13 @@
 int execute_args(int argcount, char *argv[]) 
 {
     int ex;
-    //printf("argcount: %i, argv: %s\n", argcount, argv[0]);
-    //printf("searching for internal: %s\n", argv[0]);
+
+    // Check to see if function was an internal function
     ex = search_internal(argcount, argv);
-    // check to see if function was an internal function
     if(ex == NOT_FOUND) 
     {
-        //printf("searching for external: %s\n", argv[0]);
-        ex = search_external(argv);
         // Check to see if it was an external function
-        if(ex == NOT_FOUND) 
-        {
-            printf("searching for script\n");
-            // shell script
-        }
+        ex = search_external(argv);
     }
     if (ex != EXIT_SUCCESS)
     {

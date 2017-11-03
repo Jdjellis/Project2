@@ -23,9 +23,9 @@ int exec_pipe(SHELLCMD *t)
     pid_t c1pid;
     pid_t c2pid;
 
+    /* Spawn a child to run the program. */
     c1pid = fork();
 
-    /* Spawn a child to run the program. */
     if (c1pid == -1) 
     {
         function_error("fork()", c1pid);
@@ -40,24 +40,35 @@ int exec_pipe(SHELLCMD *t)
 	        function_error("fork()", c2pid);
 	        exit(EXIT_FAILURE);
 	    }
-	    else if (c2pid == 0)
+	    else if (c2pid == 0)	// CHILD PROCESS 2 (left-most branch)
 	    {
-	    	// CHILD PROCESS 2 (left-most branch)
 	    	// set up stdout to be pipe
-	    	printf("STDOUT_FILENO: %i\n", STDOUT_FILENO);
-	    	ex = pipe_setup(fd, STDOUT_FILENO);
-	    	ex = execute_shellcmd(t->left);
+	    	close(fd[0]);
+	    	
+	    	if((ex = dup2(fd[1], STDOUT_FILENO)) == -1)
+	    	{
+	    		function_error("dup2 c2pid", EXIT_FAILURE);
+	    	}
+	    	else
+	    	{
+	    		ex = execute_shellcmd(t->left);
+	    	}
 	    	exit(ex);
 	    }
 
-	    else
+	    else 	// CHILD PROCESS 1 (right-most branch)
 	    {
-	    	// CHILD PROCESS 1 (right-most branch)
+	    	close(fd[1]);
+        	if((ex = dup2(fd[0], STDIN_FILENO)) == -1)
+	    	{
+	    		function_error("dup2 c1pid", EXIT_FAILURE);
+	    		exit(ex);
+	    	}
 	    	wait(&status); // wait for child process 2 to finish
-	    	if (status == 0)
-	        {
-	        	ex = pipe_setup(fd, STDIN_FILENO);
-	        	ex = execute_shellcmd(t->right);
+	        	
+	        if (status == 0)
+        	{
+        		ex = execute_shellcmd(t->right);
 	        }
 	        else
 	        {
@@ -68,7 +79,10 @@ int exec_pipe(SHELLCMD *t)
     }
     else                // Parent process
     {
+        close(fd[1]);
+        close(fd[0]);
         wait(&status);  // wait for child to exit
+
         if (status == 0)
         {
             ex = EXIT_SUCCESS;

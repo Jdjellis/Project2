@@ -116,6 +116,7 @@ extern int execute_args(int, char *[]);
 extern int exec_fork(SHELLCMD *);
 extern void file_redirection(SHELLCMD *);
 extern int exec_pipe(SHELLCMD *);
+extern int exec_shellscript(char * cmd);
 
 
 // ADDITIONAL GLOBAL VARIABLES

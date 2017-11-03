@@ -36,7 +36,7 @@ int exec_fork(SHELLCMD *t)
             case CMD_COMMAND :
                 file_redirection(t);
                 ex = command(t);
-                
+
             default:
                 ex = EXIT_FAILURE;
         }
