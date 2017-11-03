@@ -72,6 +72,7 @@ int run_time(int argcount, char *argv[])
 
 	struct timeval tv1;
 	struct timeval tv2;
+	struct timeval res;
 
 	result = gettimeofday(&tv1, NULL);
 
@@ -81,7 +82,8 @@ int run_time(int argcount, char *argv[])
 		result = gettimeofday(&tv2, NULL);
 		if (result == 0)
 		{
-			printf("command '%s' took %dms\n", argv[0], tv2.tv_usec-tv1.tv_usec);
+			timersub(&tv2, &tv1, &res);
+			printf("command '%s' took %dms\n", argv[0], res.tv_usec/1000);
 		}
 	}
 	

@@ -20,7 +20,8 @@
 
 #define	DEFAULT_HOME		"/tmp"
 #define	DEFAULT_PATH		"/bin:/usr/bin:/usr/local/bin:."
-#define	DEFAULT_CDPATH		".:.."
+#define	DEFAULT_CDPATH	".:.."
+#define MYSHELLPATH     "./myshell"
 
 #define COMMENT_CHAR		'#'	// comment character
 #define HOME_CHAR		'~'	// home directory character

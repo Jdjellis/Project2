@@ -13,8 +13,8 @@ int search_external(char *argv[])
     // Check if argv[0] contains a slash character. Otherwise, search in PATH variable
     if (strchr(argv[0], '/') !=NULL)
     {
-        ex = exec_external(argv[0], argv);
-        ex = exec_shellscript(argv[0]);
+        cmd = argv[0];
+        found = access(cmd, F_OK);
     }
 	else 
 	{
@@ -28,17 +28,17 @@ int search_external(char *argv[])
 			free(cmd);
 			pch = strtok(NULL, ":");
 		}
-
-		if (found == 0) {
-			ex = exec_external(cmd, argv);
-			if (ex!= 0) {
-				ex = exec_shellscript(cmd);
-			}
+	}
+	if (found == 0) 
+	{
+		ex = exec_external(cmd, argv);
+		if (ex!= 0) {
+		ex = exec_shellscript(cmd);
 		}
-		else
-		{
-			ex = EXIT_FAILURE;
-		}
+	}
+	else
+	{
+		ex = EXIT_FAILURE;
 	}
 	return ex;
 }
